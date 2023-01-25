@@ -42,6 +42,25 @@ class MyApp extends StatelessWidget {
                 Container(color: Colors.purple, width: 50, height: 50),
               ],
             ),
+            Container(
+              color: Colors.amber,
+              width: 300,
+              height: 30,
+              child: const Text(
+                "Diamante amarelo",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 28,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print("Apertou o botao");
+              },
+              child: const Text("Botao"),
+            )
           ],
         ),
       ),
