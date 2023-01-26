@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'task.dart';
+import '../components/task.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});
@@ -20,9 +20,9 @@ class _InitialScreenState extends State<InitialScreen> {
       ),
       body: AnimatedOpacity(
         opacity: (opacidade) ? 1 : 0,
-        duration: Duration(milliseconds: 800),
+        duration: const Duration(milliseconds: 800),
         child: ListView(
-          children: [
+          children: const [
             Task(
                 "Aprender Dart",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Dart_programming_language_logo_icon.svg/1024px-Dart_programming_language_logo_icon.svg.png",
