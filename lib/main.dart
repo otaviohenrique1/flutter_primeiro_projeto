@@ -15,17 +15,30 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
+          leading: Container(
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.arrow_back),
+            ),
+          ),
           title: const Text("Tarefas"),
         ),
         body: ListView(
           children: [
-            Task("Aprender Dart"),
-            Task("Aprender Javascript"),
-            Task("Aprender PHP"),
-            Task("Aprender Java"),
-            Task("Aprender C#"),
-            Task("Aprender Python"),
-            Task("Aprender R"),
+            Task("Aprender Dart",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Dart_programming_language_logo_icon.svg/1024px-Dart_programming_language_logo_icon.svg.png"),
+            Task("Aprender Javascript",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Font_Awesome_5_brands_js.svg/896px-Font_Awesome_5_brands_js.svg.png"),
+            Task("Aprender PHP",
+                "https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large"),
+            Task("Aprender Java",
+                "https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large"),
+            Task("Aprender C#",
+                "https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large"),
+            Task("Aprender Python",
+                "https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large"),
+            Task("Aprender R",
+                "https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large"),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -42,9 +55,11 @@ class MyApp extends StatelessWidget {
 
 class Task extends StatefulWidget {
   final String nome;
+  final String foto;
 
   const Task(
-    this.nome, {
+    this.nome,
+    this.foto, {
     Key? key,
   }) : super(key: key);
 
@@ -79,6 +94,10 @@ class _TaskState extends State<Task> {
                         color: Colors.black26,
                         width: 72,
                         height: 100,
+                        child: Image.network(
+                          widget.foto,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       Container(
                         width: 200,
@@ -88,13 +107,28 @@ class _TaskState extends State<Task> {
                               fontSize: 24, overflow: TextOverflow.ellipsis),
                         ),
                       ),
-                      ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              nivel++;
-                            });
-                          },
-                          child: const Icon(Icons.arrow_drop_up))
+                      Container(
+                        width: 52,
+                        height: 52,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                nivel++;
+                              });
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                const Icon(Icons.arrow_drop_up),
+                                Text(
+                                  "UP",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            )),
+                      )
                     ],
                   ),
                 ),
