@@ -29,7 +29,7 @@ class _MyAppSemRefatoracaoState extends State<MyAppSemRefatoracao> {
         ),
         body: AnimatedOpacity(
           opacity: (opacidade) ? 1 : 0,
-          duration: Duration(milliseconds: 800),
+          duration: const Duration(milliseconds: 800),
           child: ListView(
             children: const [
               Task(
@@ -69,7 +69,7 @@ class _MyAppSemRefatoracaoState extends State<MyAppSemRefatoracao> {
               opacidade = !opacidade;
             });
           },
-          child: Icon(Icons.remove_red_eye),
+          child: const Icon(Icons.remove_red_eye),
         ),
       ),
     );
@@ -138,7 +138,7 @@ class _TaskState extends State<Task> {
                       ),
                       Column(
                         children: [
-                          Container(
+                          SizedBox(
                             width: 200,
                             child: Text(
                               widget.nome,
@@ -190,7 +190,7 @@ class _TaskState extends State<Task> {
                           ),
                         ],
                       ),
-                      Container(
+                      SizedBox(
                         width: 52,
                         height: 52,
                         child: ElevatedButton(
@@ -201,8 +201,8 @@ class _TaskState extends State<Task> {
                             },
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                const Icon(Icons.arrow_drop_up),
+                              children: const [
+                                Icon(Icons.arrow_drop_up),
                                 Text(
                                   "UP",
                                   style: TextStyle(
@@ -220,7 +220,7 @@ class _TaskState extends State<Task> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
+                      child: SizedBox(
                         width: 200,
                         child: LinearProgressIndicator(
                           color: Colors.white,
